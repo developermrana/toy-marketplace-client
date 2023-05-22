@@ -5,30 +5,30 @@ import {
   FaFacebook,
   FaInstagram,
   FaLinkedin,
-  FaLinkedinIn,
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footers = () => {
   return (
     <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
       <div className="grid grid-flow-col gap-4">
-        <a to="home" className="link link-hover">
+        <Link to="home" className="link link-hover">
           Home
-        </a>
-        <a to="allToys" className="link link-hover">
+        </Link>
+        <Link to="allToys" className="link link-hover">
           All Toys
-        </a>
-        <a to="myToys" className="link link-hover">
+        </Link>
+        <Link to="myToys" className="link link-hover">
           My Toys
-        </a>
-        <a to="addToy" className="link link-hover">
+        </Link>
+        <Link to="addToy" className="link link-hover">
           Add A Toy
-        </a>
-        <a to="blogs" className="link link-hover">
+        </Link>
+        <Link to="blogs" className="link link-hover">
           Blogs
-        </a>
+        </Link>
       </div>
       <div>
         <div className="grid grid-flow-col gap-4">
