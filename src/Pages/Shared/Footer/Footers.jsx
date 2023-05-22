@@ -14,19 +14,19 @@ const Footers = () => {
   return (
     <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
       <div className="grid grid-flow-col gap-4">
-        <Link to="home" className="link link-hover">
+        <Link to="/" className="link link-hover">
           Home
         </Link>
-        <Link to="allToys" className="link link-hover">
+        <Link to="/allToys" className="link link-hover">
           All Toys
         </Link>
-        <Link to="myToys" className="link link-hover">
+        <Link to="/myToys" className="link link-hover">
           My Toys
         </Link>
-        <Link to="addToy" className="link link-hover">
+        <Link to="/addToy" className="link link-hover">
           Add A Toy
         </Link>
-        <Link to="blogs" className="link link-hover">
+        <Link to="/blogs" className="link link-hover">
           Blogs
         </Link>
       </div>
