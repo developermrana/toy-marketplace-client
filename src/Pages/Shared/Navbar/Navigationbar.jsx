@@ -63,7 +63,10 @@ const Navigationbar = () => {
                       title={user?.displayName}
                     />
                   ) : (
-                    <p className="text-white uppercase bg-lime-900 py-3 px-5 rounded-full">
+                    <p
+                      className="text-white uppercase bg-lime-900 py-3 px-5 rounded-full"
+                      title={user?.displayName}
+                    >
                       {user.email.slice(0, 1)}
                     </p>
                   )}
