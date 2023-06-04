@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { HiX, HiMenu } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import logo from "./../../../assets/logo.svg";
 
 const Navigationbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,9 @@ const Navigationbar = () => {
       <div className="bg-teal-600">
         <div className="navbar Container flex justify-between  items-center h-20 text-white font-semibold">
           <div>
-            <h3 className="text-4xl fw-bold">Cookiteer</h3>
+            <Link to="/">
+              <img src={logo} alt="" />
+            </Link>
           </div>
           <nav>
             <div className="text-xl text-end md:hidden">
