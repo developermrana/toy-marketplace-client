@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 const ToyCard = ({ toy }) => {
-  const { rating, picture, price, toy_name } = toy;
+  const { _id, rating, picture, price, toy_name } = toy;
   return (
     <>
       <div className="card card-compact w-96 bg-base-100 shadow-2xl">
@@ -15,7 +17,11 @@ const ToyCard = ({ toy }) => {
             <p className="text-yellow-400 text-xl font-bold">
               Rating : {rating}
             </p>
-            <button className="btn btn-primary">Buy Now</button>
+            <div>
+              <Link to={`/toyDetails/${_id}`} className="btn btn-error">
+                View Details
+              </Link>
+            </div>
           </div>
         </div>
       </div>
