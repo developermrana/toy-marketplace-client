@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.Container {
+  @apply max-w-7xl w-11/12 mx-auto;
+}
