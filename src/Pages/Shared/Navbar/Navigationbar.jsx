@@ -36,10 +36,10 @@ const Navigationbar = () => {
               </span>
             </div>
             <div
-              className={`md:flex items-center gap-4 duration-700 bg-teal-600 ${
+              className={`md:flex items-center gap-4 z-50 duration-700 bg-teal-600 ${
                 isOpen
-                  ? "absolute md:static top-20 end-0 p-4 text-center space-y-5"
-                  : "absolute md:static top-20 -end-32 p-4 text-center "
+                  ? "absolute md:static top-20 end-0 p-2 text-center space-y-5"
+                  : "absolute md:static top-20 -end-32 p-2 text-center "
               }`}
             >
               <Link to="/" className="block md:flex">
@@ -57,12 +57,13 @@ const Navigationbar = () => {
               <Link to="/blog" className="block md:flex">
                 Blog
               </Link>
+
               {user ? (
                 <>
                   {user.photoURL ? (
                     <img
                       src={user.photoURL}
-                      className="w-14 h-14 rounded-full"
+                      className="w-14 h-14 rounded-full "
                       title={user?.displayName}
                     />
                   ) : (
@@ -75,7 +76,7 @@ const Navigationbar = () => {
                   )}
 
                   <Link to="/login" onClick={handleLogout}>
-                    <button className="bg-lime-900 text-white px-5 py-2">
+                    <button className="bg-lime-900 text-white px-5 py-2 ">
                       Logout
                     </button>
                   </Link>
