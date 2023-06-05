@@ -20,7 +20,11 @@ const Slider = () => {
           className="w-full h-full max-h-[540px] object-cover"
           alt="slider img"
         />
-        <h1 className="legend text-3xl ">adsjfoldskjfodsjfodsj</h1>
+        <h1 className="legend">
+          <span className="text-2xl text-white hover:text-orange-500">
+            We are GLOBAL seller
+          </span>
+        </h1>
       </div>
       <div>
         <img
@@ -28,7 +32,11 @@ const Slider = () => {
           className="w-full h-full max-h-[540px] object-cover "
           alt="slider img"
         />
-        <p className="legend">Legend 2</p>
+        <p className="legend">
+          <span className="text-2xl text-white hover:text-orange-500">
+            Bye your favorite toys
+          </span>
+        </p>
       </div>
       <div>
         <img
@@ -36,7 +44,11 @@ const Slider = () => {
           className="w-full h-full max-h-[540px] object-cover "
           alt="slider img"
         />
-        <p className="legend">Legend 3</p>
+        <p className="legend">
+          <span className="text-2xl text-white hover:text-orange-500">
+            We are delivery first
+          </span>
+        </p>
       </div>
     </Carousel>
   );
