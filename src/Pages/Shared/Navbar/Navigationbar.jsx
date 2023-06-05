@@ -48,12 +48,16 @@ const Navigationbar = () => {
               <Link to="/allToys" className="block md:flex">
                 All Toys
               </Link>
-              <Link to="/myToys" className="block md:flex">
-                My Toys
-              </Link>
-              <Link to="/addToy" className="block md:flex">
-                Add A Toys
-              </Link>
+              {user && (
+                <>
+                  <Link to="/myToys" className="block md:flex">
+                    My Toys
+                  </Link>
+                  <Link to="/addToy" className="block md:flex">
+                    Add A Toys
+                  </Link>
+                </>
+              )}
               <Link to="/blog" className="block md:flex">
                 Blog
               </Link>
