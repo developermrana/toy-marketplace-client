@@ -1,35 +1,8 @@
-import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
-const OrderRow = ({ order }) => {
-  const { _id, rating, picture, price, toy_name, seller_name } = order;
+const OrderRow = ({ addedToy, handleOrderDelete }) => {
+  const { _id, rating, picture, price, toy_name, seller_name } = addedToy;
 
-  const handleOrderDelete = (id) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        fetch(`http://localhost:5000/orders/${id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.deletedCount > 0) {
-              Swal.fire(
-                "Deleted!",
-                "Your added toy has been deleted.",
-                "success"
-              );
-            }
-          });
-      }
-    });
-  };
   return (
     <tr>
       <td>
@@ -48,7 +21,9 @@ const OrderRow = ({ order }) => {
       <td>{rating}</td>
       <td>${price}</td>
       <td>
-        <button className="Btn-fill">update</button>
+        <Link to={`/products/${_id}`} className="Btn-fill">
+          update
+        </Link>
       </td>
       <td>
         <button className="Btn-fill" onClick={() => handleOrderDelete(_id)}>

@@ -1,23 +1,55 @@
-import { useEffect, useState } from "react";
-import OrderRow from "./OrderRow";
+import { useContext, useEffect, useState } from "react";
+import MyToyRow from "./MyToyRow";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
-  const [orders, setOrders] = useState([]);
+  const { user } = useContext(AuthContext);
+  const [addedToys, setAddedToys] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("http://localhost:5000/products")
       .then((res) => res.json())
       .then((data) => {
-        setOrders(data);
+        const addedToys = data.filter((toy) => toy.email === user.email);
+        setAddedToys(addedToys);
       });
-  }, [orders]);
+  }, [addedToys]);
+
+  const handleOrderDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/products/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire(
+                "Deleted!",
+                "Your added toy has been deleted.",
+                "success"
+              );
+            }
+          });
+      }
+    });
+  };
   return (
     <>
       <h2 className="text-center text-[#405a7f] text-2xl font-bold py-10">
         Your Added Toy
       </h2>
 
-      {orders.length > 0 ? (
+      {addedToys.length > 0 ? (
         <div className="overflow-x-auto  Container my-12">
           <table className="table mx-auto w-auto">
             {/* head */}
@@ -31,19 +63,20 @@ const MyToys = () => {
               </tr>
             </thead>
             <tbody>
-              {orders.map((order) => (
-                <OrderRow
-                  key={order._id}
-                  order={order}
-                  // handleOrderDelete={handleOrderDelete}
-                  // handleConfirm={handleConfirm}
-                ></OrderRow>
+              {addedToys.map((addedToy) => (
+                <MyToyRow
+                  key={addedToy._id}
+                  addedToy={addedToy}
+                  handleOrderDelete={handleOrderDelete}
+                ></MyToyRow>
               ))}
             </tbody>
           </table>
         </div>
       ) : (
-        <h2 className="text-2xl text-center text-[#405a7f]">No Orders</h2>
+        <h2 className="text-2xl text-center text-[#405a7f]">
+          You did not add Toys
+        </h2>
       )}
     </>
   );

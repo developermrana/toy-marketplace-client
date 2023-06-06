@@ -1,7 +1,8 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const ToyDetails = () => {
+  const navigate = useNavigate();
   const toy = useLoaderData();
   const {
     rating,
@@ -15,37 +16,6 @@ const ToyDetails = () => {
     seller_name,
   } = toy;
 
-  const orderItem = {
-    rating,
-    picture,
-    price,
-    toy_name,
-    toy_description,
-    seller_name,
-    email,
-    category,
-    quantity,
-  };
-
-  const handleAddToy = () => {
-    fetch("http://localhost:5000/orders", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(orderItem),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.insertedCount > 0) {
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Your Toy has been saved",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
-      });
-  };
   return (
     <>
       <h2 className="text-3xl text-[#405a7f] font-bold  text-center py-10">
@@ -65,12 +35,8 @@ const ToyDetails = () => {
             <p className="text-yellow-400 text-xl font-bold">
               Rating : {rating}
             </p>
-            <Link
-              to="/orders"
-              onClick={handleAddToy}
-              className="Btn-fill  end-3"
-            >
-              Add Toy
+            <Link onClick={() => navigate(-1)} className="Btn-fill  end-3">
+              Go Back
             </Link>
           </div>
         </div>

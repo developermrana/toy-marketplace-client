@@ -1,10 +1,22 @@
-import { useContext } from "react";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
 
-const AddToys = () => {
-  const { user } = useContext(AuthContext);
-  const handleAddToy = (e) => {
+const UpdateToy = () => {
+  const loadedToy = useLoaderData();
+
+  const {
+    _id,
+    toy_name,
+    category,
+    price,
+    rating,
+    seller_name,
+    picture,
+    quantity,
+    email,
+    toy_description,
+  } = loadedToy;
+  const handleUpdate = (e) => {
     e.preventDefault();
     const form = e.target;
     const toy_name = form.toyName.value;
@@ -16,7 +28,7 @@ const AddToys = () => {
     const quantity = form.quantity.value;
     const email = form.email.value;
     const toy_description = form.toy_description.value;
-    const newProduct = {
+    const UpdatedProduct = {
       toy_name,
       category,
       price,
@@ -27,18 +39,18 @@ const AddToys = () => {
       email,
       toy_description,
     };
-    fetch("http://localhost:5000/products", {
-      method: "POST",
+    fetch(`http://localhost:5000/products/${_id}`, {
+      method: "PATCH",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(newProduct),
+      body: JSON.stringify(UpdatedProduct),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedCount > 0) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             position: "center",
             icon: "success",
-            title: "Your Toy has been added successfully",
+            title: "Your Toy has been update successfully",
             showConfirmButton: false,
             timer: 1500,
           });
@@ -52,14 +64,14 @@ const AddToys = () => {
         Your Added Toy
       </h2>
       <div className=" text-center">
-        <form onSubmit={handleAddToy} className="w-full lg:flex flex-wrap">
+        <form onSubmit={handleUpdate} className="w-full lg:flex flex-wrap">
           <div className="flex flex-col gap-2 basis-1/2 mb-5">
             <label htmlFor="toyName">Toy Name</label>
             <input
               type="text"
               name="toyName"
               id="toyName"
-              placeholder="your toy name"
+              defaultValue={toy_name}
               required
               className="block py-2 px-3 border-[#f99] border-2 rounded-md mx-auto w-full max-w-xs"
             />
@@ -70,7 +82,7 @@ const AddToys = () => {
               type="text"
               name="category"
               id="category"
-              placeholder="category name"
+              defaultValue={category}
               required
               className="block py-2 px-3 border-[#f99] border-2 rounded-md mx-auto w-full max-w-xs"
             />
@@ -81,7 +93,7 @@ const AddToys = () => {
               type="number"
               name="price"
               id="price"
-              placeholder="price"
+              defaultValue={price}
               required
               className="block py-2 px-3 border-[#f99] border-2 rounded-md mx-auto w-full max-w-xs"
             />
@@ -92,7 +104,7 @@ const AddToys = () => {
               type="number"
               name="rating"
               id="rating"
-              placeholder="rating"
+              defaultValue={rating}
               required
               className="block py-2 px-3 border-[#f99] border-2 rounded-md mx-auto w-full max-w-xs"
             />
@@ -103,7 +115,7 @@ const AddToys = () => {
               type="text"
               name="seller_name"
               id="seller_name"
-              placeholder="your shop name"
+              defaultValue={seller_name}
               required
               className="block py-2 px-3 border-[#f99] border-2 rounded-md mx-auto w-full max-w-xs"
             />
@@ -114,8 +126,7 @@ const AddToys = () => {
               type="email"
               name="email"
               id="email"
-              defaultValue={user.email}
-              readOnly
+              defaultValue={email}
               required
               className="block py-2 px-3 border-[#f99] border-2 rounded-md mx-auto w-full max-w-xs"
             />
@@ -126,7 +137,7 @@ const AddToys = () => {
               type="url"
               name="picture"
               id="picture"
-              placeholder="toy picture url"
+              defaultValue={picture}
               required
               className="block py-2 px-3 border-[#f99] border-2 rounded-md mx-auto w-full max-w-xs"
             />
@@ -137,7 +148,7 @@ const AddToys = () => {
               type="number"
               name="quantity"
               id="quantity"
-              placeholder="quantity"
+              defaultValue={quantity}
               required
               className="block py-2 px-3 border-[#f99] border-2 rounded-md mx-auto w-full max-w-xs"
             />
@@ -149,12 +160,12 @@ const AddToys = () => {
               name="toy_description"
               id="toy_description"
               required
-              placeholder="toy description"
+              defaultValue={toy_description}
               className="block py-2 px-3 border-[#f99] border-2 rounded-md mx-auto w-full max-w-7xl h-52"
             ></textarea>
           </div>
           <button type="submit" className="Btn-fill w-full my-5 ">
-            Add Toy
+            Update
           </button>
         </form>
       </div>
@@ -162,4 +173,4 @@ const AddToys = () => {
   );
 };
 
-export default AddToys;
+export default UpdateToy;
