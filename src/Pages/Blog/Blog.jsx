@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import PageTitle from "../PageTitle/PageTitle";
 
 const Blog = () => {
   return (
     <div>
+      <PageTitle title="blog" />
       <p className="text-center text-[#405a7f] text-3xl font-bold py-10">
         Question and Answer
       </p>

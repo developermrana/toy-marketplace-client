@@ -20,10 +20,10 @@ const Toys = () => {
     <>
       <div className="bg-base-200 ">
         <h2 className="text-3xl text-[#405a7f] font-bold  text-center py-10">
-          Bye Your Favorite Toys
+          New Arrivals
         </h2>
         <div className="Container">
-          <Tabs forceRenderTabPanel defaultIndex={1}>
+          <Tabs forceRenderTabPanel defaultIndex={0}>
             <TabList>
               <Tab>All</Tab>
               <Tab>Category</Tab>

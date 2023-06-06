@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import ToyRow from "../AllToys/ToyRow";
+import PageTitle from "../PageTitle/PageTitle";
 
 const AllToys = () => {
   const loadedToys = useLoaderData();
@@ -13,6 +14,7 @@ const AllToys = () => {
   }
   return (
     <>
+      <PageTitle title="all-toys" />
       <h2 className="text-center text-[#405a7f] text-2xl font-bold py-10">
         All Toys
       </h2>

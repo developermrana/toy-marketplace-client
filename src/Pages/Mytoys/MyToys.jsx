@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import MyToyRow from "./MyToyRow";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import PageTitle from "../PageTitle/PageTitle";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -45,6 +46,7 @@ const MyToys = () => {
   };
   return (
     <>
+      <PageTitle title="my-toys" />
       <h2 className="text-center text-[#405a7f] text-2xl font-bold py-10">
         Your Added Toy
       </h2>
