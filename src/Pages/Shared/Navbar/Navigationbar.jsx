@@ -57,7 +57,7 @@ const Navigationbar = () => {
               {user && (
                 <>
                   <Link
-                    to="/myToys"
+                    to="/orders"
                     className="block md:flex text-[#405a7f] hover:text-[#f99] duration-300"
                   >
                     My Toys
