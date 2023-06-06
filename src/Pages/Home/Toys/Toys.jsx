@@ -19,7 +19,7 @@ const Toys = () => {
   return (
     <>
       <div className="bg-base-200 ">
-        <h2 className="text-3xl font-bold  text-center py-10">
+        <h2 className="text-3xl text-[#405a7f] font-bold  text-center py-10">
           Bye Your Favorite Toys
         </h2>
         <div className="Container">

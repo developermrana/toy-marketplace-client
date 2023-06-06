@@ -14,39 +14,59 @@ const Footers = () => {
   return (
     <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
       <div className="grid grid-flow-col gap-4">
-        <Link to="/" className="link link-hover">
+        <Link to="/" className="link link-hover hover:text-[#f99]">
           Home
         </Link>
-        <Link to="/allToys" className="link link-hover">
+        <Link to="/allToys" className="link link-hover hover:text-[#f99]">
           All Toys
         </Link>
-        <Link to="/myToys" className="link link-hover">
+        <Link to="/myToys" className="link link-hover hover:text-[#f99]">
           My Toys
         </Link>
-        <Link to="/addToy" className="link link-hover">
+        <Link to="/addToy" className="link link-hover hover:text-[#f99]">
           Add A Toy
         </Link>
-        <Link to="/blog" className="link link-hover">
+        <Link to="/blog" className="link link-hover hover:text-[#f99]">
           Blogs
         </Link>
       </div>
       <div>
         <div className="grid grid-flow-col gap-4">
-          <a className="text-3xl">
+          <Link
+            to="https://www.facebook.com/"
+            target="_blank"
+            className="text-3xl text-[#f99] hover:text-[#405a7f] hover:scale-150 duration-300"
+          >
             <FaFacebook />
-          </a>
-          <a className="text-3xl">
+          </Link>
+          <Link
+            to="https://www.instagram.com/"
+            target="_blank"
+            className="text-3xl text-[#f99] hover:text-[#405a7f] hover:scale-150 duration-300"
+          >
             <FaInstagram />
-          </a>
-          <a className="text-3xl">
+          </Link>
+          <Link
+            to="https://www.youtube.com/"
+            target="_blank"
+            className="text-3xl text-[#f99] hover:text-[#405a7f] hover:scale-150 duration-300"
+          >
             <FaYoutube />
-          </a>
-          <a className="text-3xl">
+          </Link>
+          <Link
+            to="https://www.twitter.com/"
+            target="_blank"
+            className="text-3xl text-[#f99] hover:text-[#405a7f] hover:scale-150 duration-300"
+          >
             <FaTwitter />
-          </a>
-          <a className="text-3xl">
+          </Link>
+          <Link
+            to="https://www.linkedin.com/"
+            target="_blank"
+            className="text-3xl text-[#f99] hover:text-[#405a7f] hover:scale-150 duration-300"
+          >
             <FaLinkedin />
-          </a>
+          </Link>
         </div>
       </div>
       <div>

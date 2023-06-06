@@ -5,6 +5,9 @@ const ToyDetails = () => {
   const { _id, rating, picture, price, toy_name, toy_description } = toy;
   return (
     <>
+      <h2 className="text-3xl text-[#405a7f] font-bold  text-center py-10">
+        <span className="text-[#f99]">{toy_name}</span> Details
+      </h2>
       <div className="Container my-12 card card-compact w-full lg-w-1/2 bg-base-100 shadow-2xl ">
         <figure>
           <img className="w-full h-auto" src={picture} alt="Toy image" />
@@ -19,7 +22,7 @@ const ToyDetails = () => {
             <p className="text-yellow-400 text-xl font-bold">
               Rating : {rating}
             </p>
-            <Link to={`/myToys/${_id}`} className="btn btn-error end-3">
+            <Link to={`/myToys/${_id}`} className="Btn-fill  end-3">
               Add Toy
             </Link>
           </div>

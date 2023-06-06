@@ -10,7 +10,7 @@ const Login = () => {
   const { loginWithGoogle, login } = useContext(AuthContext);
   const [error, setError] = useState("");
   const location = useLocation();
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
   const from = location?.state?.from?.pathname || "/";
 
   const handleLogin = (e) => {
@@ -20,7 +20,7 @@ const Login = () => {
     const password = form.password.value;
     login(email, password)
       .then(() => {
-        Navigate(from);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(error);
@@ -31,7 +31,7 @@ const Login = () => {
   const handleLoginGoogle = () => {
     loginWithGoogle()
       .then(() => {
-        Navigate(from);
+        navigate(from);
       })
       .catch((error) => {
         setError(error);
@@ -41,7 +41,7 @@ const Login = () => {
   return (
     <div className="Container">
       <div className="md:w-1/2 mx-auto">
-        <h2 className="text-2xl py-8">Please login</h2>
+        <h2 className="text-2xl py-8 text-[#405a7f]">Please login</h2>
         <form onSubmit={handleLogin}>
           <div>
             <label htmlFor="email" className="inline-block mb-2 text-lg">
@@ -94,10 +94,7 @@ const Login = () => {
           ) : (
             ""
           )}
-          <button
-            type="submit"
-            className="bg-teal-600 text-white w-full my-5 py-2"
-          >
+          <button type="submit" className="Btn-fill w-full my-5 ">
             Login
           </button>
         </form>

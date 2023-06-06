@@ -7,8 +7,8 @@
 }
 
 .Btn {
-  @apply hover:text-white py-2 px-4 border-2 border-[#f99] rounded-lg hover:bg-[#f99] duration-500 font-semibold;
+  @apply hover:text-white py-2 px-4 border-2 border-[#405a7f] hover:border-[#f99] rounded-lg hover:bg-[#f99] duration-500 font-semibold;
 }
 .Btn-fill {
-  @apply text-white hover:text-[#f99] py-2 px-4 border-2 border-[#f99] rounded-lg bg-[#f99] hover:bg-transparent duration-500 font-semibold;
+  @apply text-white hover:text-[#405a7f] py-2 px-4 border-2 border-[#f99] hover:border-[#405a7f] rounded-lg bg-[#f99] hover:bg-transparent duration-500 font-semibold;
 }

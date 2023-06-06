@@ -2,7 +2,13 @@
 import React from "react";
 
 const Blog = () => {
-  return <div>this is blog page</div>;
+  return (
+    <div>
+      <p className="text-center text-[#405a7f] text-2xl font-bold py-10">
+        Question and Answer
+      </p>
+    </div>
+  );
 };
 
 export default Blog;

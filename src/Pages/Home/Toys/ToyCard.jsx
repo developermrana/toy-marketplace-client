@@ -11,14 +11,14 @@ const ToyCard = ({ toy }) => {
         <div className="card-body">
           <h2 className="card-title">{toy_name}</h2>
           <p className="text-xl">
-            Price : <span className="text-orange-400">${price}</span>
+            Price : <span className="text-[#405a7f]">${price}</span>
           </p>
           <div className="card-actions justify-between items-center">
-            <p className="text-yellow-400 text-xl font-bold">
-              Rating : {rating}
+            <p className="text-xl">
+              Rating : <span className="text-yellow-400">{rating}</span>
             </p>
             <div>
-              <Link to={`/toyDetails/${_id}`} className="btn btn-error">
+              <Link to={`/toyDetails/${_id}`} className="Btn-fill">
                 View Details
               </Link>
             </div>

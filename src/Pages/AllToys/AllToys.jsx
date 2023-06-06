@@ -1,10 +1,9 @@
 import { useLoaderData } from "react-router-dom";
-import ToyRow from "../Mytoys/ToyRow";
+import ToyRow from "../AllToys/ToyRow";
 
 const AllToys = () => {
   const loadedToys = useLoaderData();
 
-  console.log(loadedToys);
   let toys;
 
   if (loadedToys.length > 20) {
@@ -14,8 +13,8 @@ const AllToys = () => {
   }
   return (
     <>
-      <h2 className="text-center text-2xl font-bold py-10">
-        Your Favorite Toy
+      <h2 className="text-center text-[#405a7f] text-2xl font-bold py-10">
+        All Toys
       </h2>
 
       <div className="overflow-x-auto">

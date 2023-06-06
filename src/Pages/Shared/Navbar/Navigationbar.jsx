@@ -19,7 +19,7 @@ const Navigationbar = () => {
   };
   return (
     <>
-      <div className="bg-teal-600">
+      <div className="bg-base-200">
         <div className="navbar Container flex justify-between  items-center h-20 text-white font-semibold">
           <div>
             <Link to="/">
@@ -36,29 +36,44 @@ const Navigationbar = () => {
               </span>
             </div>
             <div
-              className={`md:flex items-center gap-4 z-50 duration-700 bg-teal-600 ${
+              className={`md:flex items-center gap-4 z-50 duration-700 bg-base-200 ${
                 isOpen
                   ? "absolute md:static top-20 end-0 p-2 text-center space-y-5"
                   : "absolute md:static top-20 -end-32 p-2 text-center "
               }`}
             >
-              <Link to="/" className="block md:flex">
+              <Link
+                to="/"
+                className="block md:flex text-[#405a7f] hover:text-[#f99] duration-300"
+              >
                 Home
               </Link>
-              <Link to="/allToys" className="block md:flex">
+              <Link
+                to="/allToys"
+                className="block md:flex text-[#405a7f] hover:text-[#f99] duration-300"
+              >
                 All Toys
               </Link>
               {user && (
                 <>
-                  <Link to="/myToys" className="block md:flex">
+                  <Link
+                    to="/myToys"
+                    className="block md:flex text-[#405a7f] hover:text-[#f99] duration-300"
+                  >
                     My Toys
                   </Link>
-                  <Link to="/addToy" className="block md:flex">
-                    Add A Toys
+                  <Link
+                    to="/addToy"
+                    className="block md:flex text-[#405a7f] hover:text-[#f99] duration-300"
+                  >
+                    Add a toy
                   </Link>
                 </>
               )}
-              <Link to="/blog" className="block md:flex">
+              <Link
+                to="/blog"
+                className="block md:flex text-[#405a7f] hover:text-[#f99] duration-300"
+              >
                 Blog
               </Link>
 
@@ -80,16 +95,12 @@ const Navigationbar = () => {
                   )}
 
                   <Link to="/login" onClick={handleLogout}>
-                    <button className="bg-lime-900 text-white px-5 py-2 ">
-                      Logout
-                    </button>
+                    <button className="Btn-fill">Logout</button>
                   </Link>
                 </>
               ) : (
                 <Link to="/login">
-                  <button className="bg-lime-900 text-white px-5 py-2 rounded-md">
-                    Login
-                  </button>
+                  <button className="Btn-fill">Login</button>
                 </Link>
               )}
             </div>

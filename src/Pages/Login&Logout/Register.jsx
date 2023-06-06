@@ -38,7 +38,7 @@ const Register = () => {
   return (
     <div className="Container">
       <div className="md:w-1/2 mx-auto">
-        <h2 className="text-2xl py-8">Please login</h2>
+        <h2 className="text-2xl py-8 text-[#405a7f]">Please login</h2>
         <form onSubmit={handleRegister}>
           <div className="mb-3">
             <label htmlFor="name" className="inline-block mb-2 text-lg">
@@ -118,10 +118,7 @@ const Register = () => {
           ) : (
             ""
           )}
-          <button
-            type="submit"
-            className="bg-teal-600 text-white w-full my-5 py-2"
-          >
+          <button type="submit" className="Btn-fill w-full my-5 ">
             Registration
           </button>
         </form>
