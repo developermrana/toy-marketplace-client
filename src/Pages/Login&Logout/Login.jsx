@@ -20,7 +20,7 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     login(email, password)
-      .then(() => {
+      .then((result) => {
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -31,8 +31,8 @@ const Login = () => {
 
   const handleLoginGoogle = () => {
     loginWithGoogle()
-      .then(() => {
-        navigate(from);
+      .then((result) => {
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(error);

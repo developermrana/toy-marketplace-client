@@ -40,11 +40,14 @@ const UpdateToy = () => {
       email,
       toy_description,
     };
-    fetch(`http://localhost:5000/products/${_id}`, {
-      method: "PATCH",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(UpdatedProduct),
-    })
+    fetch(
+      `https://assinment-elevent-server-mrana565.vercel.app/products/${_id}`,
+      {
+        method: "PATCH",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(UpdatedProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {

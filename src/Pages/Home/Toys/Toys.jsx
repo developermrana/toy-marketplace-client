@@ -12,7 +12,7 @@ const Toys = () => {
   const horseToys = allToys.filter((toy) => toy.category === "horse");
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://assinment-elevent-server-mrana565.vercel.app/products")
       .then((res) => res.json())
       .then((data) => setAllToys(data));
   }, []);

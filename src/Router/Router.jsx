@@ -25,7 +25,10 @@ const router = createBrowserRouter([
       {
         path: "allToys",
         element: <AllToys />,
-        loader: () => fetch("http://localhost:5000/products"),
+        loader: () =>
+          fetch(
+            "https://assinment-elevent-server-mrana565.vercel.app/products"
+          ),
       },
       {
         path: "myToys",
@@ -51,7 +54,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://assinment-elevent-server-mrana565.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "login",
@@ -69,7 +74,9 @@ const router = createBrowserRouter([
         path: "products/:id",
         element: <UpdateToy />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://assinment-elevent-server-mrana565.vercel.app/products/${params.id}`
+          ),
       },
     ],
   },

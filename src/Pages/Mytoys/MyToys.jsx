@@ -9,7 +9,7 @@ const MyToys = () => {
   const [addedToys, setAddedToys] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://assinment-elevent-server-mrana565.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         const addedToys = data.filter((toy) => toy.email === user.email);
@@ -28,9 +28,12 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/products/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://assinment-elevent-server-mrana565.vercel.app/products/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
