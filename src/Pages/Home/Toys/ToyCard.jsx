@@ -1,10 +1,20 @@
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const ToyCard = ({ toy }) => {
   const { _id, rating, picture, price, toy_name } = toy;
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <>
-      <div className="card card-compact w-96 bg-base-100 shadow-2xl mx-auto">
+      <div
+        className="card card-compact w-96 bg-base-100 shadow-2xl mx-auto"
+        data-aos="zoom-in-down"
+      >
         <figure>
           <img className="w-full h-80" src={picture} alt="Toy image" />
         </figure>

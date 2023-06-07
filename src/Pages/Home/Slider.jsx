@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
 import sliderImg1 from "./../../assets/slider-images/slider1.jpg";
 import sliderImg2 from "./../../assets/slider-images/slider2.jpg";
 import sliderImg3 from "./../../assets/slider-images/slider3.jpg";
